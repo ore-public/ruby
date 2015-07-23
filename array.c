@@ -1343,6 +1343,9 @@ rb_ary_first(int argc, VALUE *argv, VALUE ary)
 static VALUE
 rb_ary_second(int argc, VALUE *argv, VALUE ary)
 {
+  VALUE nv;
+
+  rb_scan_args(argc, argv, "0", &nv);
   if (RARRAY_LEN(ary) < 2) return Qnil;
   return RARRAY_AREF(ary, 1);
 }
